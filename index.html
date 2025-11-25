@@ -8,6 +8,20 @@
     <link href="/src/tailwind.css" rel="stylesheet" />
   </head>
   <body>
+    <form id="searchForm">
+      <label for="searchText">Write your word here:</label>
+
+      <input
+        type="text"
+        name="searchText"
+        id="searchText"
+        placeholder="Search a word"
+      />
+
+      <button type="submit">Search</button>
+    </form>
+
+    <section id="wordSection"></section>
     <script type="module" src="/src/main.ts"></script>
   </body>
 </html>
