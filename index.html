@@ -7,7 +7,7 @@
     <title>dictionary-app</title>
     <link href="/src/tailwind.css" rel="stylesheet" />
   </head>
-  <body>
+  <body class="flex flex-col justify-center items-center mt-7">
     <form id="searchForm">
       <label for="searchText">Write your word here:</label>
 
@@ -16,9 +16,15 @@
         name="searchText"
         id="searchText"
         placeholder="Search a word"
+        class="bg-white rounded text-black py-1 px-2"
       />
 
-      <button type="submit">Search</button>
+      <button
+        type="submit"
+        class="bg-blue-200 py-1 px-2 rounded text-black hover:cursor-pointer hover:bg-blue-400"
+      >
+        Search
+      </button>
     </form>
 
     <section id="wordSection"></section>

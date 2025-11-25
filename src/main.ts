@@ -1,8 +1,9 @@
+import { createHtml } from "./htmlUtils";
 import { getWords } from "./services/dictionaryService";
 import "./style.css";
 
 document.getElementById("searchForm")?.addEventListener("submit", async (e) => {
-  e.preventDefault;
+  e.preventDefault();
 
   const theInput = document.getElementById("searchText");
 
@@ -13,6 +14,7 @@ document.getElementById("searchForm")?.addEventListener("submit", async (e) => {
   }
 
   const words = await getWords(searchText);
+
   createHtml(words);
 
   if (theInput) {
