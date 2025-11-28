@@ -1,4 +1,6 @@
 export type Definition = {
   definition: string;
-  example: string;
+  synonyms: string[];
+  antonyms: string[];
+  example?: string;
 };
