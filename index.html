@@ -1,33 +1,33 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>dictionary-app</title>
+    <title>Dictionary App</title>
     <link href="/src/tailwind.css" rel="stylesheet" />
   </head>
-  <body class="flex flex-col justify-center items-center mt-7">
-    <form id="searchForm">
-      <label for="searchText">Write your word here:</label>
+  <body class="flex flex-col justify-center items-center mt-7 bg-neutral-200">
+    <form id="searchForm" class="mb-5 flex gap-2 items-center">
+      <label for="searchText" class="font-medium">Write your word here:</label>
 
       <input
         type="text"
         name="searchText"
         id="searchText"
         placeholder="Search a word"
-        class="bg-white rounded text-black py-1 px-2"
+        class="bg-white rounded text-black py-1 px-2 border-2"
       />
 
       <button
         type="submit"
-        class="bg-blue-200 py-1 px-2 rounded text-black hover:cursor-pointer hover:bg-blue-400"
+        class="bg-blue-200 font-medium py-1 px-4 rounded border-2 text-black hover:cursor-pointer hover:text-white hover:border-black hover:bg-blue-950"
       >
         Search
       </button>
     </form>
 
-    <section id="wordSection"></section>
+    <section id="wordSection" class="w-3xl"></section>
     <script type="module" src="/src/main.ts"></script>
   </body>
 </html>

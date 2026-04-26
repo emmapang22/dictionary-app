@@ -15,23 +15,16 @@ document.getElementById("searchForm")?.addEventListener("submit", async (e) => {
   }
 
   if (!searchText) {
-    showError("Please write a word");
-    return;
+    return showError("Please write a word");
   }
 
-  try {
-    const words = await getWords(searchText);
+  const words = await getWords(searchText);
 
-    if (!words) {
-      showError("Word is not found");
-      return;
-    }
-
-    createHtml(words);
-
-    theInput.value = "";
-  } catch (error) {
-    console.log("Error in form submission:", error);
-    showError("An error ocurred while searching");
+  if (!words) {
+    return showError(`Could not find the word "${searchText}"`);
   }
+
+  createHtml(words);
+
+  theInput.value = "";
 });
