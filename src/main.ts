@@ -1,7 +1,8 @@
-import { createHtml } from "./utils/htmlUtils";
+import { createWordDefinitionCard } from "./utils/createWordDefinitionCard";
 import { getWords } from "./services/dictionaryService";
 import "./style.css";
 import { showError } from "./utils/errorHtmlUtils";
+import type { DictionaryResponse } from "./models/DictionaryResponse";
 
 document.getElementById("searchForm")?.addEventListener("submit", async (e) => {
   e.preventDefault();
@@ -18,13 +19,13 @@ document.getElementById("searchForm")?.addEventListener("submit", async (e) => {
     return showError("Please write a word");
   }
 
-  const words = await getWords(searchText);
+  const words: DictionaryResponse[] | undefined = await getWords(searchText);
 
   if (!words) {
     return showError(`Could not find the word "${searchText}"`);
   }
 
-  createHtml(words);
+  createWordDefinitionCard(words);
 
   theInput.value = "";
 });

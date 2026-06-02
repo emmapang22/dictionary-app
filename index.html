@@ -7,27 +7,42 @@
     <title>Dictionary App</title>
     <link href="/src/tailwind.css" rel="stylesheet" />
   </head>
-  <body class="flex flex-col justify-center items-center mt-7 bg-neutral-200">
-    <form id="searchForm" class="mb-5 flex gap-2 items-center">
-      <label for="searchText" class="font-medium">Write your word here:</label>
-
-      <input
-        type="text"
-        name="searchText"
-        id="searchText"
-        placeholder="Search a word"
-        class="bg-white rounded text-black py-1 px-2 border-2"
-      />
-
-      <button
-        type="submit"
-        class="bg-blue-200 font-medium py-1 px-4 rounded border-2 text-black hover:cursor-pointer hover:text-white hover:border-black hover:bg-blue-950"
+  <body class="flex flex-col items-center bg-neutral-200 min-h-screen">
+    <header class="flex bg-[#303b53] w-full justify-center">
+      <div
+        class="flex flex-col gap-4 py-6 px-4 lg:flex-row justify-between items-center w-full max-w-3xl"
       >
-        Search
-      </button>
-    </form>
+        <h1 class="font-bold text-3xl text-white">WebDictionary</h1>
 
-    <section id="wordSection" class="w-3xl"></section>
+        <form
+          id="searchForm"
+          class="flex gap-2 items-center justify-center w-full lg:w-auto"
+        >
+          <label for="searchText" class="sr-only">Search a word</label>
+
+          <input
+            type="text"
+            name="searchText"
+            id="searchText"
+            placeholder="Search a word"
+            class="bg-white rounded text-black py-1 px-2 border-2 border-neutral-500"
+          />
+
+          <button
+            type="submit"
+            class="bg-blue-200 font-medium py-1 px-4 rounded border-2 border-blue-300 text-black hover:cursor-pointer hover:text-white hover:border-blue-600 hover:bg-blue-400"
+          >
+            Search
+          </button>
+        </form>
+      </div>
+    </header>
+
+    <section
+      id="wordSection"
+      class="w-full lg:w-3xl px-4 py-8 flex flex-col gap-6"
+    ></section>
+
     <script type="module" src="/src/main.ts"></script>
   </body>
 </html>

@@ -1,6 +1,6 @@
 import type { DictionaryResponse } from "../models/DictionaryResponse";
 
-export const createHtml = (words: DictionaryResponse[]) => {
+export const createWordDefinitionCard = (words: DictionaryResponse[]) => {
   const wordSection = document.getElementById("wordSection");
 
   if (wordSection) {
@@ -10,7 +10,7 @@ export const createHtml = (words: DictionaryResponse[]) => {
   words.forEach((word) => {
     const wordContainer = document.createElement("div");
     wordContainer.className =
-      "rounded-lg bg-white text-black mb-5 py-5 px-6 border-2";
+      "rounded-lg bg-white text-black py-5 px-6 border-2";
 
     const searchedWord = document.createElement("h2");
     searchedWord.innerHTML = word.word;
@@ -23,13 +23,12 @@ export const createHtml = (words: DictionaryResponse[]) => {
     wordContainer.appendChild(searchedWord);
     wordContainer.appendChild(phonetic);
 
-    // find item that has an audio file
     const phoneticWithAudio = word.phonetics.find((p) => p.audio);
 
     if (phoneticWithAudio?.audio) {
       const audio = document.createElement("audio");
       audio.controls = true;
-      audio.className = "mb-3";
+      audio.className = "mb-3 w-full";
       audio.src = phoneticWithAudio.audio;
       wordContainer.appendChild(audio);
     }
